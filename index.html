@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>calculadora</title>
+<script>
+       function fcalc(){
+            var mont = 0;
+            var contempo=0;
+            
+            var capital=document.getElementById("capital").value;
+            var tempo=document.getElementById("tempo").value;
+            var itaxa=document.getElementById("taxa").value;
+
+    
+            var itaxa=itaxa/100;
+          
+            var x = (1+itaxa);
+        
+
+
+  for( var cont=0; cont < tempo ; cont++ ){
+            mont++;
+            contempo++;
+            var mtx = Math.pow(x,mont);
+       
+            var montfv = capital*mtx;
+            document.getElementById("Calc").innerHTML += "O montante do "+contempo+"°"+ " mes é =   "+"R$ "+montfv.toFixed(2) +"<br>"+"<br>";
+       }
+     }
+</script>
+   <style>
+body{
+           background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/rN0W64K4ipau8gxv/gray-background-soft-fifteen-shades-of-grey-smooth-background-with-the-addition-of-a-bit-of-noise_hegwbc5fe_thumbnail-full01.png);
+       }
+h1 
+.chs{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 50px;
+      color:#f00;
+      right: 500px;
+      position: relative;
+      text-align: center;
+      text-shadow: 0 0 3px #FF0000, 0 0 20px #FFFFFF;
+      background-color: hsla(89, 43%, 51%, 0.3);
+    }
+
+    div 
+    .cef{
+      width: 700px;
+      border: 10px solid #f00;
+      margin: 10px;
+      right: 300px;
+      position: relative;
+      text-align: center;
+      text-shadow: 0 0 3px #FF0000, 0 0 20px #FFFFFF;
+      background-color: hsla(89, 43%, 51%, 0.3);
+    }
+
+p, 
+th, 
+td{
+   font-family:  Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      color: #f00;
+      text-align: center;
+    text-shadow: 0 0 3px #FF0000, 0 0 20px #FFFFFF;
+    background-color: hsla(89, 43%, 51%, 0.3);
+}
+table{
+   position: relative;
+   left:7px;
+}
+button{
+   font-family:  Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      
+      text-align: center;
+      text-shadow: 0 0 3px #FFf000, 0 0 20px #FFFFFF;
+     background-color:    #ff4d4d
+
+
+}
+button:hover{
+   background:  #f00;
+   color:#ffffff;
+}
+   </style>
+</head>
+<body>
+  <h1 style="text-shadow: 0 0 3px #FF0000, 0 0 20px #FFFFFF;
+    background-color: hsla(89, 43%, 51%, 0.3);font-size: 50px;
+}" class="chs"; align="center";>Calcule o Juros Composto.</h1>
+  <br>
+<div class="cef">
+   <table border="15" width="100%" ><tr>
+       <th style="font-size: 40px;" >Calculator</th>
+       </tr><tr>
+       <td style="font-size: 25px" >
+           Capital: R$  <input style="font-size: 25px; text-shadow: 0 0 3px #FF0000, 0 0 20px #FFFFFF; background-color:   #d9d9d9" type="text" id="capital"><br> <br>
+            Taxa   : %  <input style="font-size: 25px; text-shadow: 0 0 3px #FF0000, 0 0 20px #FFFFFF; background-color:   #d9d9d9" type="text" id="taxa"><br><br>
+           Tempo (Mês) : <input style="font-size: 25px; text-shadow: 0 0 3px #FF0000, 0 0 20px #FFFFFF; background-color:   #d9d9d9" type="text" id="tempo"><br><br>
+           
+           <br>
+           <table border="2" width="100%" >
+           <button style="font-size: 40px" onclick="fcalc()">CALCULAR JUROS</button>
+         </table>
+           <p id="Calc"></p>
+       </td>
+       </tr>
+   </table>
+</div>
+</body>
+</html>
